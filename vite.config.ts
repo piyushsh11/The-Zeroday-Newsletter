@@ -1,7 +1,11 @@
 import { sites } from '@openai/sites-vite-plugin';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
+
 export default defineConfig({
+  // Keep generated asset URLs relative so the multipage build works both at a
+  // custom domain and when hosted from a GitHub Pages project subdirectory.
+  base: './',
   plugins: [sites()],
   build: {
     rollupOptions: {
