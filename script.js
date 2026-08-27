@@ -1,6 +1,7 @@
 import './human.css';
 import './palette.css';
 import './editorial.css';
+import './responsive.css';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
