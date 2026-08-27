@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play, decode, and learn cybersecurity with ZeroDay's quick quiz, cipher puzzle, cyber tools, and breach case studies." />
+  <meta name="theme-color" content="#071423" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'" />
+  <meta property="og:title" content="Cyber Games — ZeroDay" />
+  <meta property="og:description" content="Quick cyber quizzes, decode challenges, tools, and breach stories from ZeroDay." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Cyber Games — ZeroDay</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script type="module" src="/script.js"></script>
+  <script type="module" src="/games.js"></script>
+</head>
+<body data-page="games">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="ZeroDay home">ZERO<span>DAY</span><i></i></a>
+    <nav class="desktop-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="writeups.html">Writeups</a>
+      <a href="events.html">Events</a>
+      <a href="tools.html">Tools</a>
+      <a href="team.html">Team</a>
+      <a class="active" href="games.html">Game</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main class="page-main game-main" id="main-content">
+    <section class="page-hero game-hero" data-code="PLAY">
+      <div class="page-hero-copy">
+        <p class="eyebrow"><span>CHANNEL_06</span> / LEARN BY PLAYING</p>
+        <h1>Think like a<br><span>defender.</span></h1>
+        <p>Test your instincts, crack a cipher, and explore the tools and incidents that shaped modern cybersecurity.</p>
+        <div class="game-hero-links">
+          <a href="#quiz" class="button button-primary">Start the quiz <span>↓</span></a>
+          <a href="#decode" class="button button-ghost">Decode a secret <span>⌁</span></a>
+        </div>
+      </div>
+      <div class="game-orbit" aria-hidden="true">
+        <span class="orbit-core">?</span>
+        <i></i><i></i><i></i>
+        <b>01</b><b>02</b><b>03</b>
+      </div>
+    </section>
+
+    <section class="game-section quiz-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="game-section-heading reveal">
+        <div>
+          <p class="eyebrow"><span>01</span> / QUICK CYBER QUIZ</p>
+          <h2 id="quiz-title">How sharp are your<br>cyber instincts?</h2>
+        </div>
+        <div class="quiz-meter" aria-live="polite">
+          <span>Score</span>
+          <strong><b id="quiz-score">0</b>/5</strong>
+          <small id="quiz-progress">Question 1 of 5</small>
+        </div>
+      </div>
+
+      <div class="quiz-shell reveal" id="quiz-shell">
+        <article class="quiz-question is-active" data-question="1" data-explanation="A password manager can create and store unique passwords so one leaked password does not unlock several accounts.">
+          <p class="quiz-number">QUESTION 01</p>
+          <h3>Which password habit is the safest?</h3>
+          <div class="quiz-options" role="group" aria-label="Question 1 answers">
+            <button type="button" class="quiz-option">Use the same strong password everywhere</button>
+            <button type="button" class="quiz-option" data-correct="true">Use unique passwords stored in a password manager</button>
+            <button type="button" class="quiz-option">Add your birth year to every password</button>
+            <button type="button" class="quiz-option">Keep passwords in a public notes file</button>
+          </div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="quiz-question" data-question="2" data-explanation="MFA adds another proof of identity, so a stolen password alone is often not enough for an attacker to sign in.">
+          <p class="quiz-number">QUESTION 02</p>
+          <h3>What is the main benefit of multi-factor authentication?</h3>
+          <div class="quiz-options" role="group" aria-label="Question 2 answers">
+            <button type="button" class="quiz-option">It makes your internet faster</button>
+            <button type="button" class="quiz-option">It automatically removes malware</button>
+            <button type="button" class="quiz-option" data-correct="true">It requires another proof of identity beyond a password</button>
+            <button type="button" class="quiz-option">It hides your email address</button>
+          </div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="quiz-question" data-question="3" data-explanation="Phishing messages often create urgency so you react before checking the sender, link, or request carefully.">
+          <p class="quiz-number">QUESTION 03</p>
+          <h3>A message says “Your account closes in 10 minutes — click now!” What should you notice first?</h3>
+          <div class="quiz-options" role="group" aria-label="Question 3 answers">
+            <button type="button" class="quiz-option">The message has a logo</button>
+            <button type="button" class="quiz-option" data-correct="true">The sudden urgency and pressure to click</button>
+            <button type="button" class="quiz-option">The message is short</button>
+            <button type="button" class="quiz-option">The sender used punctuation</button>
+          </div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="quiz-question" data-question="4" data-explanation="Software updates frequently patch known vulnerabilities that attackers may already know how to exploit.">
+          <p class="quiz-number">QUESTION 04</p>
+          <h3>Why are software updates important for security?</h3>
+          <div class="quiz-options" role="group" aria-label="Question 4 answers">
+            <button type="button" class="quiz-option">They always make the screen brighter</button>
+            <button type="button" class="quiz-option">They delete all old files</button>
+            <button type="button" class="quiz-option">They stop every future attack</button>
+            <button type="button" class="quiz-option" data-correct="true">They often fix known security weaknesses</button>
+          </div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="quiz-question" data-question="5" data-explanation="HTTPS encrypts data between your browser and the website, but it does not prove that every HTTPS website is honest or safe.">
+          <p class="quiz-number">QUESTION 05</p>
+          <h3>What does HTTPS mainly tell you?</h3>
+          <div class="quiz-options" role="group" aria-label="Question 5 answers">
+            <button type="button" class="quiz-option" data-correct="true">Your connection to the site is encrypted</button>
+            <button type="button" class="quiz-option">The website can never be malicious</button>
+            <button type="button" class="quiz-option">The website has no tracking</button>
+            <button type="button" class="quiz-option">The website belongs to the government</button>
+          </div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </article>
+
+        <div class="quiz-finish" id="quiz-finish" hidden>
+          <p class="eyebrow"><span>QUIZ_COMPLETE</span> / RESULT</p>
+          <h3>You scored <span id="final-score">0</span>/5.</h3>
+          <p id="final-message">Every answer is another layer in your firewall.</p>
+          <button type="button" class="button button-primary" id="restart-quiz">Play again <span>↻</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section decode-section" id="decode" aria-labelledby="decode-title">
+      <div class="decode-layout reveal">
+        <div class="decode-copy">
+          <p class="eyebrow"><span>02</span> / MINI PUZZLE</p>
+          <h2 id="decode-title">There is a story<br>inside this cipher.</h2>
+          <p>This message was encrypted using a classic Caesar cipher. Every letter has been shifted by the same number. Can you bring it back?</p>
+          <div class="cipher-hints">
+            <button type="button" id="hint-one">Hint 01</button>
+            <button type="button" id="hint-two">Hint 02</button>
+            <button type="button" id="reveal-cipher">Reveal answer</button>
+          </div>
+          <p class="cipher-hint-output" id="cipher-hint-output" aria-live="polite">No hints used yet.</p>
+        </div>
+        <div class="cipher-board" aria-label="Encrypted puzzle">
+          <div class="cipher-label"><span>ENCRYPTED_MESSAGE</span><b>CAESAR / ?</b></div>
+          <p class="cipher-text">AOL MPYZA JVTWBALY IBN DHZ H YLHS TVAO MVBUK PUZPKL H YLSHF PU 1947</p>
+          <div class="cipher-keyline"><span>A → H</span><i></i><span>SHIFT UNKNOWN</span></div>
+          <p class="cipher-answer" id="cipher-answer" hidden>THE FIRST COMPUTER BUG WAS A REAL MOTH FOUND INSIDE A RELAY IN 1947.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section explore-section" id="explore" aria-labelledby="explore-title">
+      <div class="game-section-heading reveal">
+        <div>
+          <p class="eyebrow"><span>03</span> / EXPLORE &amp; LEARN</p>
+          <h2 id="explore-title">Tools to try.<br>Breaches to study.</h2>
+        </div>
+        <p>Open the official tool, trusted resource, or incident report and go one level deeper.</p>
+      </div>
+
+      <div class="resource-gallery">
+        <a class="resource-panel reveal resource-wireshark" href="https://www.wireshark.org/" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art" aria-hidden="true"><span class="wave w1"></span><span class="wave w2"></span><span class="wave w3"></span><b>WS</b></div>
+          <div class="resource-copy"><span>TOOL / NETWORK ANALYSIS</span><h3>Wireshark</h3><p>See what is actually moving across a network, packet by packet.</p><strong>Official website ↗</strong></div>
+        </a>
+
+        <a class="resource-panel reveal resource-nmap" href="https://nmap.org/" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art map-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b>NM</b></div>
+          <div class="resource-copy"><span>TOOL / DISCOVERY</span><h3>Nmap</h3><p>Discover hosts, services, ports, and the shape of a network you are authorized to test.</p><strong>Official website ↗</strong></div>
+        </a>
+
+        <a class="resource-panel reveal resource-hibp" href="https://haveibeenpwned.com/" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art breach-art" aria-hidden="true"><span>@</span><i></i><i></i><i></i></div>
+          <div class="resource-copy"><span>TOOL / BREACH AWARENESS</span><h3>Have I Been Pwned</h3><p>Check whether an email address appears in known public breach datasets.</p><strong>Open service ↗</strong></div>
+        </a>
+
+        <a class="resource-panel reveal resource-wannacry" href="https://www.cisa.gov/news-events/ics-alerts/ics-alert-17-135-01i" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art incident-art" aria-hidden="true"><span>2017</span><b>!</b><i></i></div>
+          <div class="resource-copy"><span>CASE STUDY / RANSOMWARE</span><h3>WannaCry</h3><p>A global ransomware outbreak that showed how quickly one unpatched weakness can spread.</p><strong>Read CISA analysis ↗</strong></div>
+        </a>
+
+        <a class="resource-panel reveal resource-solarwinds" href="https://www.cisa.gov/news-events/alerts/2020/12/13/active-exploitation-solarwinds-software" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art supply-art" aria-hidden="true"><span></span><span></span><span></span><b>SW</b></div>
+          <div class="resource-copy"><span>CASE STUDY / SUPPLY CHAIN</span><h3>SolarWinds</h3><p>Study how trusted software updates became a path into many organizations.</p><strong>Read CISA alert ↗</strong></div>
+        </a>
+
+        <a class="resource-panel reveal resource-equifax" href="https://www.ftc.gov/enforcement/refunds/equifax-data-breach-settlement" target="_blank" rel="noopener noreferrer">
+          <div class="resource-art identity-art" aria-hidden="true"><b>ID</b><span></span><span></span><span></span></div>
+          <div class="resource-copy"><span>CASE STUDY / PERSONAL DATA</span><h3>Equifax</h3><p>A major breach affecting personal information and a powerful lesson in patching and data protection.</p><strong>Read FTC resource ↗</strong></div>
+        </a>
+      </div>
+
+      <p class="game-ethics reveal">Explore responsibly: security tools should only be used on systems you own or have explicit permission to test.</p>
+    </section>
+
+    <section class="game-end reveal">
+      <p>Finished the challenge?</p>
+      <h2>Curiosity is a<br>security skill.</h2>
+      <a class="button button-primary" href="writeups.html">Explore ZeroDay research <span>→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html">ZERO<span>DAY</span></a>
+    <p>Department of Cybersecurity<br>MPSTME, SVKM’s NMIMS University</p>
+    <p class="motto">“Knowledge is the Strongest Firewall.”</p>
+    <a class="footer-link" href="https://www.linkedin.com/school/nmims-university/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <span>© <b data-year></b> ZeroDay</span>
+  </footer>
+</body>
+</html>
