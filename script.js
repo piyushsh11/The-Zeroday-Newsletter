@@ -1,4 +1,5 @@
 import './human.css';
+import './palette.css';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
@@ -248,13 +249,13 @@ if (canvas && !reduceMotion) {
       if (a.x < 0 || a.x > innerWidth) a.vx *= -1;
       if (a.y < 0 || a.y > innerHeight) a.vy *= -1;
 
-      ctx.fillStyle = 'rgba(93,230,168,.28)';
+      ctx.fillStyle = 'rgba(216,200,170,.25)';
       ctx.fillRect(a.x, a.y, 1.2, 1.2);
 
       nodes.slice(index + 1).forEach((b) => {
         const distance = Math.hypot(a.x - b.x, a.y - b.y);
         if (distance < 150) {
-          ctx.strokeStyle = `rgba(93,230,168,${0.045 * (1 - distance / 150)})`;
+          ctx.strokeStyle = `rgba(154,169,186,${0.045 * (1 - distance / 150)})`;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
