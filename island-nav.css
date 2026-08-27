@@ -1,0 +1,193 @@
+/* Dynamic-Island-style navigation + simplified hero chrome. */
+
+/* Remove the elements called out in the latest review. */
+.hero-index,
+.signal-strip,
+.scene-ribbon{
+  display:none!important;
+}
+
+/* Desktop: one centered floating capsule, intentionally compact. */
+.site-header{
+  top:16px!important;
+  left:50%!important;
+  right:auto!important;
+  width:min(940px,calc(100vw - 40px))!important;
+  max-width:940px!important;
+  height:58px!important;
+  padding:0 10px 0 18px!important;
+  transform:translateX(-50%)!important;
+  border:1px solid rgba(255,255,255,.11)!important;
+  border-radius:999px!important;
+  background:rgba(16,42,68,.96)!important;
+  color:#f8f6f0!important;
+  box-shadow:0 12px 28px rgba(20,42,64,.14),0 2px 8px rgba(20,42,64,.08)!important;
+  backdrop-filter:blur(22px) saturate(135%)!important;
+}
+.site-header.scrolled{
+  background:rgba(12,35,58,.985)!important;
+  border-color:rgba(255,255,255,.14)!important;
+  box-shadow:0 16px 34px rgba(20,42,64,.18)!important;
+}
+
+.site-header .brand{
+  flex:0 0 auto;
+  color:#f8f6f0!important;
+  font-size:16px!important;
+  letter-spacing:-.07em!important;
+  white-space:nowrap;
+}
+.site-header .brand span{color:#d8c8aa!important}
+.site-header .brand i{
+  width:4px!important;
+  height:4px!important;
+  top:-3px!important;
+  right:-7px!important;
+  background:#d8c8aa!important;
+}
+
+.site-header .desktop-nav{
+  margin-left:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:1px!important;
+  min-width:0!important;
+  max-width:none!important;
+}
+.site-header .desktop-nav a{
+  flex:0 0 auto!important;
+  min-height:36px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0 11px!important;
+  border:0!important;
+  border-radius:999px!important;
+  color:rgba(248,246,240,.72)!important;
+  background:transparent!important;
+  font-size:8px!important;
+  letter-spacing:.09em!important;
+  white-space:nowrap!important;
+  transition:background .2s ease,color .2s ease,transform .2s ease!important;
+}
+.site-header .desktop-nav a:hover{
+  color:#fff!important;
+  background:rgba(255,255,255,.08)!important;
+  transform:none!important;
+}
+.site-header .desktop-nav a.active{
+  color:#142a40!important;
+  background:#f1eadc!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.45) inset!important;
+}
+.site-header .desktop-nav a.active::before{display:none!important}
+
+/* Give the hero enough clean air below the floating pill. */
+.hero{padding-top:116px!important}
+.page-hero{padding-top:122px!important}
+
+/* Medium laptops: keep the complete island visible without spilling. */
+@media (max-width:1280px) and (min-width:1051px){
+  .site-header{
+    width:min(860px,calc(100vw - 30px))!important;
+    height:54px!important;
+    padding-left:15px!important;
+    padding-right:8px!important;
+  }
+  .site-header .brand{font-size:15px!important}
+  .site-header .desktop-nav a{
+    min-height:34px!important;
+    padding:0 8px!important;
+    font-size:7.5px!important;
+    letter-spacing:.075em!important;
+  }
+
+  /* Undo the previous early hamburger breakpoint for this range. */
+  .site-header .menu-toggle{display:none!important}
+  .site-header .desktop-nav{
+    position:static!important;
+    width:auto!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:none!important;
+    grid-template-columns:none!important;
+  }
+}
+
+/* Tablet / phone: the island contracts to brand + menu button and expands below. */
+@media (max-width:1050px){
+  .site-header{
+    width:min(300px,calc(100vw - 28px))!important;
+    height:56px!important;
+    padding:0 8px 0 16px!important;
+    justify-content:space-between!important;
+  }
+  .site-header .brand{font-size:15px!important}
+  .site-header .menu-toggle{
+    display:block!important;
+    position:relative!important;
+    z-index:4!important;
+    width:42px!important;
+    height:42px!important;
+    flex:0 0 42px!important;
+    padding:8px!important;
+    border-radius:50%!important;
+    background:rgba(255,255,255,.06)!important;
+  }
+  .site-header .menu-toggle span{background:#f8f6f0!important}
+
+  .site-header .desktop-nav{
+    position:absolute!important;
+    top:calc(100% + 9px)!important;
+    left:50%!important;
+    right:auto!important;
+    width:min(390px,calc(100vw - 28px))!important;
+    margin:0!important;
+    padding:10px!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:5px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:26px!important;
+    background:rgba(16,42,68,.985)!important;
+    box-shadow:0 18px 42px rgba(20,42,64,.18)!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+    transform:translate(-50%,-8px) scale(.97)!important;
+    transform-origin:top center!important;
+    transition:opacity .2s ease,transform .22s ease,visibility .2s!important;
+  }
+  .site-header.menu-open .desktop-nav{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translate(-50%,0) scale(1)!important;
+  }
+  .site-header .desktop-nav a{
+    min-height:43px!important;
+    padding:0 10px!important;
+    font-size:8px!important;
+  }
+}
+
+@media (max-width:520px){
+  .site-header{
+    width:min(260px,calc(100vw - 24px))!important;
+    top:10px!important;
+  }
+  .site-header .desktop-nav{
+    grid-template-columns:1fr!important;
+    width:min(300px,calc(100vw - 24px))!important;
+    border-radius:24px!important;
+  }
+  .hero{padding-top:94px!important}
+  .page-hero{padding-top:102px!important}
+}
