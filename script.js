@@ -18,6 +18,21 @@ if (bootScreen) bootScreen.hidden = true;
    lines so it stays sharp, responsive and easy to tune. */
 const hero = document.querySelector('.hero, .page-hero');
 if (hero) {
+  const scene = document.createElement('div');
+  scene.className = 'cyber-scene';
+  scene.setAttribute('aria-hidden', 'true');
+  scene.innerHTML = `
+    <div class="scene-ribbon"><span>CYBER DEFENCE / THREAT INTELLIGENCE</span></div>
+    <i class="scene-route route-a"></i><i class="scene-route route-b"></i><i class="scene-route route-c"></i><i class="scene-route route-d"></i>
+    <div class="scene-chip chip-iam"><i></i><b>IAM</b><small>IDENTITY</small></div>
+    <div class="scene-chip chip-cti"><i></i><b>CTI</b><small>THREAT INTEL</small></div>
+    <div class="scene-chip chip-soc"><i></i><b>SOC</b><small>MONITOR</small></div>
+    <div class="scene-chip chip-net"><i></i><b>NET</b><small>TRAFFIC</small></div>
+    <i class="scene-node node-a"></i><i class="scene-node node-b"></i><i class="scene-node node-c"></i>
+    <div class="scene-axis"><i></i><i></i><i></i><i></i></div>
+  `;
+  hero.prepend(scene);
+
   const stage = document.createElement('div');
   stage.className = 'ambient-stage';
   stage.setAttribute('aria-hidden', 'true');
