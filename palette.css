@@ -1,5 +1,4 @@
 @import './island-nav.css';
-@import './menu-cleanup.css';
 
 /* Professional ZeroDay palette: deep navy, off-white, beige and cool grey. */
 :root{
@@ -25,25 +24,6 @@ body{
     #071423;
 }
 body::before{opacity:.22}
-
-.site-header{
-  border-color:rgba(246,244,238,.10);
-  background:rgba(7,20,35,.72);
-}
-.site-header.scrolled{
-  background:rgba(7,20,35,.92);
-  border-color:rgba(216,200,170,.22);
-}
-.desktop-nav a{color:#aab2bc}
-.desktop-nav a:hover{background:rgba(246,244,238,.045)}
-.desktop-nav a.active{
-  border-color:rgba(216,200,170,.25);
-  background:rgba(216,200,170,.10);
-}
-.desktop-nav a.active::before{
-  background:var(--accent);
-  box-shadow:0 0 10px rgba(216,200,170,.40);
-}
 
 .ambient-ring:nth-child(1){--ring:#f0eee8}
 .ambient-ring:nth-child(2){--ring:#bba681}
@@ -153,7 +133,3 @@ body::before{opacity:.22}
 .footer-link,.text-link{color:var(--accent)}
 
 ::selection{background:rgba(216,200,170,.28);color:var(--ink)}
-
-@media (max-width:760px){
-  .desktop-nav{background:rgba(7,20,35,.97)}
-}
