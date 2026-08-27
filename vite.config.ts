@@ -14,6 +14,7 @@ export default defineConfig({
         events: resolve(__dirname, 'events.html'),
         tools: resolve(__dirname, 'tools.html'),
         team: resolve(__dirname, 'team.html'),
+        games: resolve(__dirname, 'games.html'),
       },
     },
   },
