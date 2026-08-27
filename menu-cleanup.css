@@ -12,6 +12,11 @@ html body .site-header.scrolled{
   -webkit-backdrop-filter:none!important;
   text-shadow:none!important;
   isolation:isolate!important;
+  contain:paint!important;
+  clip-path:inset(0 round 999px)!important;
+  -webkit-clip-path:inset(0 round 999px)!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
 }
 
 html body .site-header::before,
@@ -53,17 +58,9 @@ html body .site-header .desktop-nav a.active{
   -webkit-font-smoothing:antialiased!important;
 }
 
-html body .site-header .desktop-nav a{
-  color:rgba(248,246,240,.86)!important;
-}
-
-html body .site-header .desktop-nav a:hover{
-  color:#ffffff!important;
-}
-
-html body .site-header .desktop-nav a.active{
-  color:#e1cfaa!important;
-}
+html body .site-header .desktop-nav a{color:rgba(248,246,240,.9)!important}
+html body .site-header .desktop-nav a:hover{color:#ffffff!important}
+html body .site-header .desktop-nav a.active{color:#e1cfaa!important}
 
 html body .site-header .desktop-nav a::before,
 html body .site-header .desktop-nav a::after{
@@ -81,6 +78,9 @@ html body .site-header .desktop-nav a::after{
 @media(max-width:1050px){
   html body .site-header{
     overflow:visible!important;
+    contain:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
   }
   html body .site-header .desktop-nav{
     background:#173a5e!important;
