@@ -1,5 +1,6 @@
 import './human.css';
 import './palette.css';
+import './editorial.css';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
@@ -160,11 +161,9 @@ addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-/* Very small card tilt. It should feel hand-tuned, not like a 3D demo. */
+/* Keep the object-like tilt only on the hero terminal. Flat editorial rows stay flat. */
 if (!reduceMotion && matchMedia('(pointer:fine)').matches) {
-  const tiltTargets = document.querySelectorAll(
-    '.feature-card,.highlight-card,.tool-card,.person-card,.leadership-card,.terminal-card'
-  );
+  const tiltTargets = document.querySelectorAll('.terminal-card');
   tiltTargets.forEach((card) => {
     card.classList.add('tilt-target');
     card.addEventListener('pointermove', (event) => {
