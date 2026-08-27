@@ -1,0 +1,244 @@
+/* Light editorial ZeroDay theme + laptop overflow fixes.
+   Warm off-white paper, deep navy typography, beige accents and blue-grey blueprint lines. */
+
+:root{
+  --bg:#f2efe7;
+  --panel:#faf8f2;
+  --panel-2:#e9edf0;
+  --ink:#142a40;
+  --muted:#687684;
+  --line:rgba(20,42,64,.14);
+  --accent:#173a5e;
+  --accent-dim:rgba(23,58,94,.07);
+  --accent-2:#8192a2;
+  --accent-3:#f8f6f0;
+  --accent-warm:#b8a27a;
+  --danger:#8a5f52;
+  --blueprint-grid:rgba(65,86,108,.075);
+  --blueprint-grid-strong:rgba(65,86,108,.105);
+  --blueprint-line:rgba(23,58,94,.18);
+  --blueprint-line-soft:rgba(23,58,94,.09);
+}
+
+*{min-width:0}
+html,body{width:100%;max-width:100%;overflow-x:clip;background:#f2efe7;color:var(--ink)}
+body{
+  background:
+    radial-gradient(840px circle at var(--px) var(--py),rgba(184,162,122,.08),transparent 58%),
+    radial-gradient(920px circle at 88% 16%,rgba(129,146,162,.09),transparent 62%),
+    #f2efe7!important;
+  background-attachment:fixed!important;
+}
+main{width:100%;max-width:100%;overflow:hidden;background:transparent!important}
+
+/* Persistent light blueprint background across every page. */
+body::before{
+  opacity:.82!important;
+  background-image:
+    linear-gradient(var(--blueprint-grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--blueprint-grid) 1px,transparent 1px),
+    linear-gradient(var(--blueprint-grid-strong) 1px,transparent 1px),
+    linear-gradient(90deg,var(--blueprint-grid-strong) 1px,transparent 1px)!important;
+  background-size:64px 64px,64px 64px,256px 256px,256px 256px!important;
+  mask-image:none!important;
+}
+body::after{
+  opacity:.62!important;
+  background:
+    radial-gradient(ellipse 270px 155px at -2% 22%,transparent 0 72%,rgba(23,58,94,.10) 72.4% 72.9%,transparent 73.3%),
+    radial-gradient(ellipse 340px 195px at 104% 36%,transparent 0 76%,rgba(184,162,122,.14) 76.4% 76.8%,transparent 77.2%),
+    radial-gradient(ellipse 290px 175px at 82% 86%,transparent 0 70%,rgba(65,86,108,.10) 70.4% 70.8%,transparent 71.2%),
+    radial-gradient(circle at 18% 71%,rgba(23,58,94,.22) 0 2px,transparent 3px),
+    radial-gradient(circle at 63% 25%,rgba(129,146,162,.25) 0 2px,transparent 3px),
+    radial-gradient(circle at 89% 61%,rgba(184,162,122,.26) 0 2px,transparent 3px)!important;
+}
+
+/* Header — lighter, narrower and guaranteed to stay inside viewport. */
+.site-header{
+  box-sizing:border-box;
+  width:auto;
+  max-width:calc(100vw - 28px);
+  left:14px!important;
+  right:14px!important;
+  border-color:rgba(20,42,64,.13)!important;
+  background:rgba(250,248,242,.88)!important;
+  box-shadow:0 12px 34px rgba(36,48,60,.08)!important;
+  backdrop-filter:blur(18px) saturate(120%);
+}
+.site-header.scrolled{
+  background:rgba(250,248,242,.96)!important;
+  border-color:rgba(23,58,94,.18)!important;
+}
+.brand{color:#142a40}
+.brand span{color:#b39b70!important}
+.brand i{background:#173a5e!important;box-shadow:none!important}
+.desktop-nav{max-width:100%;gap:3px}
+.desktop-nav a{color:#5f6e7d!important}
+.desktop-nav a:hover{color:#142a40!important;background:rgba(23,58,94,.045)!important}
+.desktop-nav a.active{
+  color:#142a40!important;
+  border-color:rgba(23,58,94,.16)!important;
+  background:rgba(184,162,122,.15)!important;
+}
+.desktop-nav a.active::before{background:#173a5e!important;box-shadow:none!important}
+.menu-toggle span{background:#142a40!important}
+
+/* Hero and headings. */
+.hero,.page-hero{width:100%;max-width:100%;background:transparent!important}
+.hero{
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr);
+  gap:clamp(30px,4vw,68px);
+  padding-left:clamp(28px,5vw,82px);
+  padding-right:clamp(28px,5vw,82px);
+}
+.hero-copy,.page-hero-copy{max-width:100%}
+.hero-title{color:#142a40!important;text-shadow:none!important;font-size:clamp(70px,8.5vw,136px)}
+.hero-title span{color:#b49d73!important}
+.hero-title::after{-webkit-text-stroke:1px rgba(23,58,94,.08)!important}
+.type-line,.hod-quote p,.section-heading h2,.page-hero h1,.article-card h2,.event-body h2,.tool-card h2,.person-card h3,.leadership-card h3,.game-section-heading h2,.decode-copy h2,.game-end h2,.quiz-question h3,.resource-copy h3{color:#142a40!important}
+.type-line::before,.eyebrow span,.section-heading h2 em,.page-hero h1 span,.threat-level span,.article-meta .category,.category,.footer-link,.text-link{color:#173a5e!important}
+.type-line i{background:#173a5e!important}
+.eyebrow{color:#70808e!important}
+.tagline{color:#5a6875!important}
+.intro,.section-heading>p,.highlight-card p,.article-card .summary,.article-details,.event-body p,.tool-card>p,.person-card p,.leadership-card p,.call-item p,.resource-copy p,.decode-copy>p:not(.eyebrow),.game-section-heading>p,.game-ethics{color:#687684!important}
+
+/* Buttons and dividers. */
+.button{border-color:rgba(20,42,64,.18)!important}
+.button-primary{color:#f8f6f0!important;background:#173a5e!important;border-color:#173a5e!important;box-shadow:none!important}
+.button-primary:hover{background:#102f4e!important;box-shadow:5px 5px 0 rgba(184,162,122,.28)!important}
+.button-ghost{color:#173a5e!important;background:rgba(250,248,242,.50)!important}
+.button-ghost:hover{color:#142a40!important;border-color:rgba(23,58,94,.30)!important;background:rgba(184,162,122,.12)!important}
+
+/* Keep the terminal as the intentional dark contrast object. */
+.terminal-card{
+  width:min(100%,450px)!important;
+  border-color:rgba(23,58,94,.24)!important;
+  background:linear-gradient(145deg,#17304a,#0e2338)!important;
+  box-shadow:0 24px 64px rgba(40,54,68,.16)!important;
+  color:#eef2f5!important;
+}
+.terminal-top{background:rgba(8,24,39,.46)!important;border-color:rgba(238,242,245,.10)!important}
+.terminal-body{color:#d8e0e6!important}
+.terminal-body p small,.terminal-last{color:#aab6c1!important}
+.terminal-body p strong,.terminal-body em,.terminal-last b{color:#ddc9a3!important}
+.signal i{background:linear-gradient(to top,#ddc9a3,rgba(221,201,163,.10))!important}
+
+.signal-strip{
+  color:#647382!important;
+  border-color:rgba(20,42,64,.12)!important;
+  background:rgba(246,244,237,.78)!important;
+}
+.section,.content-section,.game-section,.highlights-section,.statement-section,.join-band,.page-main,.game-end{background:transparent!important}
+
+/* Editorial rows on light paper. */
+.feature-card,.highlight-card,.article-card,.event-card,.tool-card,.person-card,.leadership-card,.calls-card,.call-item,.verdict{background:transparent!important;color:#142a40!important}
+.feature-card:hover,.highlight-card:hover,.article-card:hover,.event-card:hover,.tool-card:hover,.person-card:hover,.leadership-card:hover{background:rgba(255,255,255,.32)!important}
+.feature-card>i,.highlight-card>a,.resource-copy strong{color:#173a5e!important}
+.article-card details,.article-details,.verdict,.call-item{background:transparent!important}
+.event-tags span,.tool-category,.tool-id,.group-label{color:#667685!important}
+
+/* Game page — light surfaces instead of dark slabs. */
+.quiz-option{color:#283f55!important;border-color:rgba(20,42,64,.13)!important;background:rgba(250,248,242,.30)!important}
+.quiz-option:hover{background:rgba(23,58,94,.05)!important;color:#142a40!important}
+.quiz-option.correct{background:rgba(184,162,122,.22)!important;color:#142a40!important}
+.quiz-option.incorrect{background:rgba(138,95,82,.08)!important;color:#7d6a63!important}
+.quiz-feedback{color:#627282!important}
+.cipher-board{border-color:rgba(23,58,94,.20)!important}
+.cipher-text{color:#142a40!important}
+.cipher-answer{color:#173a5e!important;border-color:rgba(23,58,94,.18)!important}
+.cipher-hints button{color:#173a5e!important;border-color:rgba(23,58,94,.20)!important;background:rgba(250,248,242,.50)!important}
+.resource-gallery{background:rgba(20,42,64,.10)!important;border-color:rgba(20,42,64,.10)!important}
+.resource-panel{background:#f8f6f0!important;color:#142a40!important}
+.resource-panel:hover{background:#efebe2!important}
+.resource-art{background:linear-gradient(145deg,#dfe5e9,#f7f4ed)!important;border-color:rgba(20,42,64,.10)!important}
+.resource-art::after{border-color:rgba(23,58,94,.15)!important}
+.resource-art>b,.breach-art span,.incident-art b,.identity-art b{color:#173a5e!important}
+
+/* Light cybersecurity hero decoration. */
+.cyber-scene::before{
+  background:
+    linear-gradient(90deg,rgba(242,239,231,.94) 0%,rgba(242,239,231,.76) 44%,rgba(242,239,231,.32) 76%,rgba(242,239,231,.08) 100%),
+    radial-gradient(circle at 76% 42%,rgba(184,162,122,.11),transparent 28%)!important;
+}
+.cyber-scene::after{background:linear-gradient(to bottom,rgba(242,239,231,.06),transparent 62%,rgba(242,239,231,.18) 100%)!important}
+.scene-ribbon{background:rgba(23,58,94,.94)!important;border-color:rgba(23,58,94,.22)!important}
+.scene-ribbon span{color:#f4eee2!important}
+.scene-route{border-color:rgba(23,58,94,.17)!important;border-left-color:transparent!important;border-bottom-color:transparent!important}
+.scene-chip{background:rgba(250,248,242,.90)!important;border-color:rgba(23,58,94,.18)!important;box-shadow:0 14px 34px rgba(40,54,68,.08)!important}
+.scene-chip b{color:#173a5e!important}
+.scene-chip small{color:#6f7e8b!important}
+.scene-chip::before,.scene-chip::after{border-color:rgba(23,58,94,.35)!important}
+.scene-node{background:#f2efe7!important;border-color:#173a5e!important;box-shadow:0 0 0 6px rgba(23,58,94,.035)!important}
+.scene-axis i{background:linear-gradient(90deg,rgba(23,58,94,.28),transparent)!important}
+.scene-axis::after{color:#71808d!important}
+
+/* Footer stays light and editorial. */
+.site-footer{
+  color:#263d52!important;
+  border-color:rgba(20,42,64,.12)!important;
+  background:rgba(232,229,220,.88)!important;
+}
+.site-footer .motto,.site-footer p,.site-footer span{color:#667482!important}
+.site-footer .brand{color:#142a40!important}
+
+::selection{background:rgba(184,162,122,.30)!important;color:#142a40!important}
+
+/* Medium laptops: compact header before anything can overflow. */
+@media(max-width:1450px){
+  .site-header{padding-left:16px!important;padding-right:12px!important}
+  .desktop-nav{gap:1px!important}
+  .desktop-nav a{padding:9px 9px!important;font-size:8px!important;letter-spacing:.08em!important}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(310px,420px);gap:3vw}
+  .terminal-card{max-width:420px!important}
+}
+
+/* Use hamburger menu on small laptops/tablets, not only phones. */
+@media(max-width:1180px){
+  .site-header{height:58px!important}
+  .menu-toggle{display:block!important;position:relative;z-index:4;width:44px;height:44px;padding:8px;cursor:pointer}
+  .menu-toggle span{position:absolute;left:8px;width:26px;margin:0;transition:transform .25s ease,top .25s ease}
+  .menu-toggle span:first-child{top:16px}
+  .menu-toggle span:last-child{top:26px}
+  .site-header.menu-open .menu-toggle span:first-child{top:21px;transform:rotate(45deg)}
+  .site-header.menu-open .menu-toggle span:last-child{top:21px;transform:rotate(-45deg)}
+  .desktop-nav{
+    position:absolute!important;
+    top:calc(100% + 8px)!important;
+    left:auto!important;
+    right:0!important;
+    width:min(430px,calc(100vw - 28px))!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:6px!important;
+    padding:12px!important;
+    border:1px solid rgba(20,42,64,.13)!important;
+    border-radius:14px!important;
+    background:rgba(250,248,242,.985)!important;
+    box-shadow:0 20px 50px rgba(40,54,68,.12)!important;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-8px) scale(.985);
+    transform-origin:top right;
+    transition:opacity .2s ease,transform .22s ease,visibility .2s;
+  }
+  .site-header.menu-open .desktop-nav{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+  .desktop-nav a{display:flex!important;align-items:center;min-height:44px;padding:11px 12px!important;font-size:9px!important}
+}
+
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr!important;height:auto!important;min-height:0!important;gap:42px!important;padding-top:116px!important;padding-bottom:72px!important}
+  .terminal-card{justify-self:stretch!important;width:min(100%,620px)!important;max-width:620px!important;margin:0 auto!important}
+  .hero-title{font-size:clamp(66px,13vw,112px)!important}
+}
+
+@media(max-width:760px){
+  body::before{background-size:44px 44px,44px 44px,176px 176px,176px 176px!important}
+  .desktop-nav{left:0!important;right:0!important;width:auto!important;grid-template-columns:1fr 1fr!important}
+  .site-header{background:rgba(250,248,242,.97)!important}
+}
+
+@media(max-width:520px){
+  .desktop-nav{grid-template-columns:1fr!important}
+  .hero-title{font-size:clamp(52px,17vw,76px)!important}
+}
