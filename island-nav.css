@@ -1,12 +1,5 @@
-/* Single source of truth for the ZeroDay navigation. */
+/* ZeroDay navigation only. No page, hero, content, or section styling belongs here. */
 
-html body .hero-index,
-html body .signal-strip,
-html body .scene-ribbon{
-  display:none!important;
-}
-
-/* One flat deep-blue island — no gradients, shadows, overlays or second tone. */
 html body .site-header,
 html body .site-header.scrolled{
   top:14px!important;
@@ -48,10 +41,7 @@ html body .site-header .desktop-nav::after{
   filter:none!important;
 }
 
-/* The ZeroDay wordmark is intentionally not part of the island. */
-html body .site-header .brand{
-  display:none!important;
-}
+html body .site-header .brand{display:none!important}
 
 html body .site-header .desktop-nav{
   position:static!important;
@@ -62,7 +52,7 @@ html body .site-header .desktop-nav{
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  gap:12px!important;
+  gap:14px!important;
   border:0!important;
   background:transparent!important;
   background-image:none!important;
@@ -79,7 +69,7 @@ html body .site-header .desktop-nav a:hover,
 html body .site-header .desktop-nav a.active{
   position:relative!important;
   flex:0 0 auto!important;
-  min-height:38px!important;
+  min-height:40px!important;
   padding:0 12px!important;
   display:inline-flex!important;
   align-items:center!important;
@@ -92,42 +82,27 @@ html body .site-header .desktop-nav a.active{
   box-shadow:none!important;
   filter:none!important;
   font-family:var(--sans)!important;
-  font-size:12px!important;
+  font-size:13px!important;
   font-weight:650!important;
   line-height:1!important;
-  letter-spacing:.045em!important;
+  letter-spacing:.035em!important;
   text-transform:uppercase!important;
   white-space:nowrap!important;
   text-rendering:optimizeLegibility!important;
   -webkit-font-smoothing:antialiased!important;
   transform:none!important;
 }
-
-html body .site-header .desktop-nav a{color:rgba(248,246,240,.86)!important}
-html body .site-header .desktop-nav a:hover{color:#ffffff!important}
+html body .site-header .desktop-nav a{color:rgba(248,246,240,.88)!important}
+html body .site-header .desktop-nav a:hover{color:#fff!important}
 html body .site-header .desktop-nav a.active{color:#e1cfaa!important}
 html body .site-header .desktop-nav a::before,
 html body .site-header .desktop-nav a::after{content:none!important;display:none!important}
 
-/* Keep the hero close to the navigation. */
-html body .hero{
-  padding-top:98px!important;
-  align-items:start!important;
-}
-html body .hero-copy,
-html body .terminal-card{margin-top:34px!important}
-html body .page-hero{
-  padding-top:102px!important;
-  align-items:start!important;
-}
-html body .page-hero-copy,
-html body .page-stats{margin-top:28px!important}
-
 @media (max-width:1280px) and (min-width:1051px){
   html body .site-header,
   html body .site-header.scrolled{
-    width:min(740px,calc(100vw - 30px))!important;
-    max-width:740px!important;
+    width:min(750px,calc(100vw - 30px))!important;
+    max-width:750px!important;
     height:58px!important;
     padding:0 16px!important;
   }
@@ -135,19 +110,15 @@ html body .page-stats{margin-top:28px!important}
   html body .site-header .desktop-nav a,
   html body .site-header .desktop-nav a:hover,
   html body .site-header .desktop-nav a.active{
-    min-height:36px!important;
+    min-height:38px!important;
     padding:0 9px!important;
-    font-size:11.5px!important;
-    letter-spacing:.035em!important;
+    font-size:12px!important;
+    letter-spacing:.025em!important;
   }
   html body .site-header .menu-toggle{display:none!important}
-  html body .hero{padding-top:92px!important}
-  html body .hero-copy,
-  html body .terminal-card{margin-top:28px!important}
 }
 
 @media (max-width:1050px){
-  /* Compact circular trigger on tablets and phones. */
   html body .site-header,
   html body .site-header.scrolled{
     width:58px!important;
@@ -182,7 +153,7 @@ html body .page-stats{margin-top:28px!important}
     padding:12px!important;
     display:grid!important;
     grid-template-columns:1fr 1fr!important;
-    gap:5px!important;
+    gap:6px!important;
     border:0!important;
     border-radius:26px!important;
     background:#173a5e!important;
@@ -204,16 +175,12 @@ html body .page-stats{margin-top:28px!important}
   html body .site-header .desktop-nav a,
   html body .site-header .desktop-nav a:hover,
   html body .site-header .desktop-nav a.active{
-    min-height:44px!important;
+    min-height:46px!important;
     padding:0 12px!important;
-    font-size:12px!important;
+    font-size:13px!important;
     font-weight:650!important;
-    letter-spacing:.035em!important;
+    letter-spacing:.025em!important;
   }
-  html body .hero{padding-top:88px!important;align-items:start!important}
-  html body .hero-copy,
-  html body .terminal-card{margin-top:22px!important}
-  html body .page-hero{padding-top:92px!important}
 }
 
 @media (max-width:520px){
@@ -231,9 +198,5 @@ html body .page-stats{margin-top:28px!important}
   }
   html body .site-header .desktop-nav a,
   html body .site-header .desktop-nav a:hover,
-  html body .site-header .desktop-nav a.active{font-size:13px!important}
-  html body .hero{padding-top:82px!important}
-  html body .page-hero{padding-top:88px!important}
-  html body .hero-copy,
-  html body .terminal-card{margin-top:18px!important}
+  html body .site-header .desktop-nav a.active{font-size:14px!important}
 }
