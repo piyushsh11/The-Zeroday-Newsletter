@@ -1,3 +1,6 @@
+@import './island-nav.css';
+@import './menu-cleanup.css';
+
 /* Professional ZeroDay palette: deep navy, off-white, beige and cool grey. */
 :root{
   --bg:#071423;
