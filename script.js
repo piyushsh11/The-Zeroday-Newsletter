@@ -3,6 +3,7 @@ import './palette.css';
 import './editorial.css';
 import './responsive.css';
 import './cyber-background.css';
+import './light-theme.css';
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
