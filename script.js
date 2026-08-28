@@ -23,7 +23,6 @@ if (hero) {
   scene.className = 'cyber-scene';
   scene.setAttribute('aria-hidden', 'true');
   scene.innerHTML = `
-    <div class="scene-ribbon"><span>CYBER DEFENCE / THREAT INTELLIGENCE</span></div>
     <i class="scene-route route-a"></i><i class="scene-route route-b"></i><i class="scene-route route-c"></i><i class="scene-route route-d"></i>
     <div class="scene-chip chip-iam"><i></i><b>IAM</b><small>IDENTITY</small></div>
     <div class="scene-chip chip-cti"><i></i><b>CTI</b><small>THREAT INTEL</small></div>
