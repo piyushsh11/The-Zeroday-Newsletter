@@ -75,12 +75,6 @@ body::after{
 .desktop-nav{max-width:100%;gap:3px}
 .desktop-nav a{color:#5f6e7d!important}
 .desktop-nav a:hover{color:#142a40!important;background:rgba(23,58,94,.045)!important}
-.desktop-nav a.active{
-  color:#142a40!important;
-  border-color:rgba(23,58,94,.16)!important;
-  background:rgba(184,162,122,.15)!important;
-}
-.desktop-nav a.active::before{background:#173a5e!important;box-shadow:none!important}
 .menu-toggle span{background:#142a40!important}
 
 /* Hero and headings. */
