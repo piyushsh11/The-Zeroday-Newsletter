@@ -166,6 +166,9 @@ body::after{
 .scene-axis i{background:linear-gradient(90deg,rgba(23,58,94,.28),transparent)!important}
 .scene-axis::after{color:#71808d!important}
 
+/* Remove the decorative page-position rail across the site. */
+.scroll-rail{display:none!important}
+
 /* Footer stays light and editorial. */
 .site-footer{
   color:#263d52!important;
