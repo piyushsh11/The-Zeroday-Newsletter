@@ -81,6 +81,7 @@ html body .site-header .desktop-nav a.active{
   background-image:none!important;
   box-shadow:none!important;
   filter:none!important;
+  color:#f8f6f0!important;
   font-family:var(--sans)!important;
   font-size:13px!important;
   font-weight:650!important;
@@ -92,9 +93,6 @@ html body .site-header .desktop-nav a.active{
   -webkit-font-smoothing:antialiased!important;
   transform:none!important;
 }
-html body .site-header .desktop-nav a{color:rgba(248,246,240,.88)!important}
-html body .site-header .desktop-nav a:hover{color:#fff!important}
-html body .site-header .desktop-nav a.active{color:#e1cfaa!important}
 html body .site-header .desktop-nav a::before,
 html body .site-header .desktop-nav a::after{content:none!important;display:none!important}
 
