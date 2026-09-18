@@ -1,9 +1,10 @@
-name: Deploy ZeroDay to GitHub Pages
+name: Build and deploy ZeroDay
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,41 +13,52 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Check out source
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: '22'
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build website
-        run: npm run build
+      - name: Build for GitHub Pages
+        run: npm run build -- --base ./
 
-      - name: Setup GitHub Pages
+      - name: Check all pages were built
+        run: |
+          for page in index blog writeups events tools team; do
+            test -f "dist/$page.html"
+          done
+
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
 
-      - name: Upload website
+      - name: Upload site artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: Deploy website
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
